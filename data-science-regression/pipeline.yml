@@ -27,7 +27,7 @@ settings:
   continue_on_step_failure: false
 
 jobs:
-  prep-job:
+  prep_job:
     type: command
     component: file:./components/prep/prep.yml
     inputs:
@@ -35,7 +35,7 @@ jobs:
     outputs:
       transformed_data: ${{parent.outputs.pipeline_job_transformed_data}}
 
-  train-job:
+  train_job:
     type: command
     component: file:./components/train/train.yml
     inputs:
@@ -43,7 +43,7 @@ jobs:
     outputs:
       model_output: ${{parent.outputs.pipeline_job_trained_model}}
   
-  evaluate-job:
+  evaluate_job:
     type: command
     component: file:./components/evaluate/evaluate.yml
     inputs:
@@ -55,7 +55,7 @@ jobs:
       score_report: ${{parent.outputs.pipeline_job_score_report}}
       deploy_flag: ${{parent.outputs.pipeline_job_deploy_flag}}
 
-  register-job:
+  register_job:
     type: command
     component: file:./components/register/register.yml
     inputs:
