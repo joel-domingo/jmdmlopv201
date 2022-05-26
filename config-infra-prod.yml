@@ -1,8 +1,8 @@
 variables:
 
   # Global
-  namespace: mlopsv2
-  postfix: 818
+  namespace: mlopsv2jmd
+  postfix: 678
   location: westus
   environment: prod
   enable_aml_computecluster: true
